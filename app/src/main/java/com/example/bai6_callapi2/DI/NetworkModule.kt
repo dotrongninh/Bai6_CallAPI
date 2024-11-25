@@ -1,5 +1,6 @@
 package com.example.bai6_callapi2.DI
 
+import android.util.Log
 import com.example.bai6_callapi2.model.API.APIsv
 import dagger.Module
 import dagger.Provides
@@ -13,6 +14,7 @@ class NetworkModule {
     @Provides
     @Singleton
     fun provideRetrofit(): Retrofit {
+        Log.d("NetworkModule","check")
         return Retrofit.Builder()
             .baseUrl("https://randomuser.me/api/")
             .addConverterFactory(GsonConverterFactory.create())

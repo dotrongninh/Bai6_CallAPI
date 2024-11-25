@@ -31,15 +31,15 @@ class MainActivity : AppCompatActivity() {
 //        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 //        userViewModel.fetchUsers()
 
-      //  (application as ExerciseApplication).appComponent.inject(this)
+        (application as ExerciseApplication).appComponent.inject(this)
 
 
-//        userViewModel.fetchUsers()
-//
-//        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
-//        userViewModel.users.observe(this, Observer { users ->
-//            recyclerView.layoutManager = LinearLayoutManager(this)
-//            recyclerView.adapter = UserAdapter(users)
-//        })
+        userViewModel.fetchUsers()
+
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+        userViewModel.users.observe(this, Observer { users ->
+            recyclerView.layoutManager = LinearLayoutManager(this)
+            recyclerView.adapter = UserAdapter(users)
+        })
     }
 }
